@@ -52,24 +52,6 @@ const words = [
   "definition"
 ];
 
-//listener for change level
-chooseLevel.addEventListener("change", changeLevel);
-//when input starts
-wordInput.addEventListener("input", clearMessage);
-//initialize seconds
-seconds.innerHTML = currentLevel;
-//initialize level
-chooseLevel.value = localStorage.getItem("defaultLevel") || "easy";
-
-function changeLevel() {
-  //update values
-  currentLevel = levels[chooseLevel.value];
-  seconds.innerHTML = currentLevel;
-  time = currentLevel;
-  //set in local storage
-  localStorage.setItem("defaultLevel", chooseLevel.value);
-}
-
 //   Initialize Game
 function init() {
   // Show number of seconds in UI
